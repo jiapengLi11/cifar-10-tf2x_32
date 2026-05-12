@@ -1,5 +1,6 @@
 from tensorflow.keras import layers, Sequential, Model
 
+
 cfg = {
     'A': [64,     'M', 128,      'M', 256, 256,           'M', 512, 512,           'M', 512, 512,           'M'],
     'B': [64, 64, 'M', 128, 128, 'M', 256, 256,           'M', 512, 512,           'M', 512, 512,           'M'],
@@ -11,7 +12,7 @@ cfg = {
 class VGG(Model):
     def __init__(self, features, num_classes, input_shape=(32, 32, 3)):
         super(VGG, self).__init__()
-        
+
         self.features = Sequential([
             layers.Input(input_shape),
             features
@@ -33,6 +34,7 @@ class VGG(Model):
 
 
 def make_layers(cfg):
+    """Create stacked VGG feature blocks from a configuration list."""
     nets = []
 
     for l in cfg:
