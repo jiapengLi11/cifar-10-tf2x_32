@@ -1,9 +1,14 @@
 # CIFAR-10 TensorFlow Models (32x32)
 
-This is an early TensorFlow image classification project for CIFAR-10. It contains two training pipelines:
+## Overview
 
-- a custom CNN in `models/Net.py`
-- a VGG19-style network in `models/VGG.py`
+This repository is an early TensorFlow image-classification project for CIFAR-10. It contains two training pipelines: a custom CNN and a VGG19-style network.
+
+## Tech Stack
+
+- Python
+- TensorFlow / Keras
+- OpenCV
 
 ## Project Structure
 
@@ -11,9 +16,9 @@ This is an early TensorFlow image classification project for CIFAR-10. It contai
 - `train_vgg19.py`: train the VGG19-style model
 - `test_net.py`: run inference with the custom CNN
 - `test_vgg19.py`: run inference with the VGG19-style model
-- `images/`: sample images for quick testing
-- `figures/`: saved training curves from earlier runs
 - `models/`: model definitions
+- `images/`: sample inputs
+- `figures/`: saved training curves
 
 ## Setup
 
@@ -21,7 +26,7 @@ This is an early TensorFlow image classification project for CIFAR-10. It contai
 pip install -r requirements.txt
 ```
 
-## Train
+## Usage
 
 Train the custom CNN:
 
@@ -35,29 +40,15 @@ Train the VGG19-style model:
 python train_vgg19.py
 ```
 
-Training weights will be saved to:
-
-- `log-self/self.h5`
-- `log-vgg19/vgg19.h5`
-
-## Predict
-
-Run the custom CNN on sample images:
+Run prediction:
 
 ```bash
 python test_net.py --weights log-self/self.h5 --image-dir images
-```
-
-Run the VGG19-style model on sample images:
-
-```bash
 python test_vgg19.py --weights log-vgg19/vgg19.h5 --image-dir images
 ```
-
-Add `--show` if you want to display the images with OpenCV.
 
 ## Notes
 
 - The repository does not include trained `.h5` weights.
-- CIFAR-10 is loaded automatically through `tensorflow.keras.datasets.cifar10`.
-- `figures/` contains exported training curves from earlier experiments, while large TensorBoard event files are excluded.
+- CIFAR-10 is loaded through `tensorflow.keras.datasets.cifar10`.
+- This repository is a cleaned learning-project snapshot rather than a full experiment backup.
