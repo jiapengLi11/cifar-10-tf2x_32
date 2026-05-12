@@ -1,14 +1,24 @@
 # CIFAR-10 TensorFlow Models (32x32)
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![TensorFlow](https://img.shields.io/badge/Framework-TensorFlow-orange)
+![Task](https://img.shields.io/badge/Task-Image%20Classification-green)
+
 ## Overview
 
 This repository is an early TensorFlow image-classification project for CIFAR-10. It contains two training pipelines: a custom CNN and a VGG19-style network.
 
-## Tech Stack
+## Preview
 
-- Python
-- TensorFlow / Keras
-- OpenCV
+| Custom CNN | VGG19-style |
+| --- | --- |
+| ![cnn-acc](figures/self-train-acc.png) | ![vgg-acc](figures/vgg19-train-acc.png) |
+
+## Highlights
+
+- two baseline image-classification pipelines in one repository
+- custom CNN and VGG19-style model comparison
+- saved training curves for quick portfolio preview
 
 ## Project Structure
 
@@ -17,7 +27,6 @@ This repository is an early TensorFlow image-classification project for CIFAR-10
 - `test_net.py`: run inference with the custom CNN
 - `test_vgg19.py`: run inference with the VGG19-style model
 - `models/`: model definitions
-- `images/`: sample inputs
 - `figures/`: saved training curves
 
 ## Setup
@@ -49,6 +58,5 @@ python test_vgg19.py --weights log-vgg19/vgg19.h5 --image-dir images
 
 ## Notes
 
-- The repository does not include trained `.h5` weights.
+- Trained `.h5` weights are not included.
 - CIFAR-10 is loaded through `tensorflow.keras.datasets.cifar10`.
-- This repository is a cleaned learning-project snapshot rather than a full experiment backup.
