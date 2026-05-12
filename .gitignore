@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+
+log/
+log-self/tensorboard/
+log-vgg19/tensorboard/
+
+*.h5
+*.pb
+*.v2
+*.profile-empty
+
+Thumbs.db
+.DS_Store
